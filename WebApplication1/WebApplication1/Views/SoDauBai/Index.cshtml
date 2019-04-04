@@ -1,0 +1,67 @@
+﻿@model IEnumerable<WebApplication1.Models.SoDauBai>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>So dau bai</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Ngày
+            @*@Html.DisplayNameFor(model => model.Ngay)*@
+        </th>
+        <th>
+            Giảng viên
+            @*@Html.DisplayNameFor(model => model.GiangVien)*@
+        </th>
+        <th>
+            Nội dung
+            @*@Html.DisplayNameFor(model => model.NoiDung)*@
+        </th>
+        <th>
+            Nhận xét
+            @*@Html.DisplayNameFor(model => model.NhanXet)*@
+        </th>
+        <th>
+            Đề xuất
+            @*@Html.DisplayNameFor(model => model.DeXuat)*@
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.Ngay.ToString("dd/MM/yyyy")
+            @*@Html.DisplayFor(modelItem => item.Ngay)*@
+        </td>
+        <td>
+            <a href="#">@item.GiangVien</a>
+            @*@Html.DisplayFor(modelItem => item.GiangVien)*@
+        </td>
+        <td>
+            <mark>@item.NoiDung</mark>
+            @*@Html.DisplayFor(modelItem => item.NoiDung)*@
+        </td>
+        <td>
+            <mark>@item.NhanXet</mark>
+            @*@Html.DisplayFor(modelItem => item.NhanXet)*@
+        </td>
+        <td>
+            <mark>@item.DeXuat</mark>
+            @*@Html.DisplayFor(modelItem => item.DeXuat)*@
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
