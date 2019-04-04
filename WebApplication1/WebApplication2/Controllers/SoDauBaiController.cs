@@ -28,12 +28,12 @@ namespace WebApplication2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SoDauBai sodaubai = db.SoDauBais.Find(id);
-            if (sodaubai == null)
+            SoDauBai model = db.SoDauBais.Find(id);
+            if (model == null)
             {
                 return HttpNotFound();
             }
-            return View(sodaubai);
+            return View(model);
         }
 
         // GET: /SoDauBai/Create
